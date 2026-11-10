@@ -27,4 +27,9 @@ if (
 } else {
     console.log(playerMove);
     console.log(computerMove);
+    if (playerMove === computerMove) {
+        console.log("Unentschieden!");
+    } else if (playerMove === "rock" && computerMove === "scissors") {
+        console.log("Du gewinnst!");
+    }
 }
