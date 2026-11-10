@@ -15,7 +15,11 @@
 // If no move is given, or it isn't one of rock, paper or scissors, print a
 // usage message instead of letting the program crash or silently guess.
 const playerMove = process.argv[2];
-if (playerMove === undefined) {
+if (
+    playerMove !== "rock" &&
+    playerMove !== "paper" &&
+    playerMove !== "scissors"
+) {
     console.log("Bitte gib rock, paper oder scissors ein.");
 } else {
     console.log(playerMove);
