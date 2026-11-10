@@ -29,7 +29,13 @@ if (
     console.log(computerMove);
     if (playerMove === computerMove) {
         console.log("Unentschieden!");
-    } else if (playerMove === "rock" && computerMove === "scissors") {
+       } else if (
+        (playerMove === "rock" && computerMove === "scissors") ||
+        (playerMove === "paper" && computerMove === "rock") ||
+        (playerMove === "scissors" && computerMove === "paper") 
+    ) {
         console.log("Du gewinnst!");
+        } else {
+        console.log("Computer gewinnt!");
     }
 }
