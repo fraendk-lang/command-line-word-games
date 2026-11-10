@@ -25,12 +25,15 @@ if (phrase === undefined) {
     console.log("Bitte gib einen Text in Anführungszeichen ein.");
 } else {
     const words = phrase.split(" ");
+    const translatedWords = [];
 for (const word of words) {
     if ("aeiou".includes(word[0])) {
-        console.log(word + "way");
+        translatedWords.push(word + "way");
        } else if ("aeiou".includes(word[1])) {
-        console.log(word.slice(1) + word[0] + "ay");
+        translatedWords.push(word.slice(1) + word[0] + "ay");
             } else {
-        console.log(word.slice(2) + word.slice(0, 2) + "ay");
+        translatedWords.push(word.slice(2) + word.slice(0, 2) + "ay");
     }
-}}
+}
+console.log(translatedWords.join(" "));
+}
