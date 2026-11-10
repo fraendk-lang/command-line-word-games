@@ -20,3 +20,9 @@
 // FR012 — Pass non-letter characters through unchanged.
 // Punctuation and numbers in the input should appear in the output exactly as
 // given, not translated or dropped.
+const phrase = process.argv[2];
+if (phrase === undefined) {
+    console.log("Bitte gib einen Text in Anführungszeichen ein.");
+} else {
+    console.log(phrase);
+}
