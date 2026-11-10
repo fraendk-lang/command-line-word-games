@@ -24,5 +24,9 @@ const phrase = process.argv[2];
 if (phrase === undefined) {
     console.log("Bitte gib einen Text in Anführungszeichen ein.");
 } else {
-    console.log(phrase);
+        if ("aeiou".includes(phrase[0])) {
+        console.log(phrase + "way");
+    } else {
+        console.log(phrase.slice(1) + phrase[0] + "ay");
+    }
 }
