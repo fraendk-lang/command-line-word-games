@@ -21,7 +21,7 @@
 // Punctuation and numbers in the input should appear in the output exactly as
 // given, not translated or dropped.
 const phrase = process.argv[2];
-if (phrase === undefined) {
+if (phrase === undefined || phrase.trim() === "") {
     console.log("Bitte gib einen Text in Anführungszeichen ein.");
 } else {
     const words = phrase.match(/[a-z]+|[^a-z]+/gi) || [];
@@ -29,9 +29,9 @@ if (phrase === undefined) {
     for (const word of words) {
     if (!/[a-z]/i.test(word)) {
     translatedWords.push(word);
-} else if ("aeiou".includes(word[0])) {
+} else if ("aeiou".includes(word[0].toLowerCase())) {
         translatedWords.push(word + "way");
-       } else if ("aeiou".includes(word[1])) {
+       } else if ("aeiou".includes((word[1] || "").toLowerCase())) {
         translatedWords.push(word.slice(1) + word[0] + "ay");
             } else {
         translatedWords.push(word.slice(2) + word.slice(0, 2) + "ay");
