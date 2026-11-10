@@ -26,7 +26,9 @@ if (phrase === undefined) {
 } else {
         if ("aeiou".includes(phrase[0])) {
         console.log(phrase + "way");
-    } else {
+       } else if ("aeiou".includes(phrase[1])) {
         console.log(phrase.slice(1) + phrase[0] + "ay");
+            } else {
+        console.log(phrase.slice(2) + phrase.slice(0, 2) + "ay");
     }
 }
