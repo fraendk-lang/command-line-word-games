@@ -24,11 +24,13 @@ const phrase = process.argv[2];
 if (phrase === undefined) {
     console.log("Bitte gib einen Text in Anführungszeichen ein.");
 } else {
-        if ("aeiou".includes(phrase[0])) {
-        console.log(phrase + "way");
-       } else if ("aeiou".includes(phrase[1])) {
-        console.log(phrase.slice(1) + phrase[0] + "ay");
+    const words = phrase.split(" ");
+for (const word of words) {
+    if ("aeiou".includes(word[0])) {
+        console.log(word + "way");
+       } else if ("aeiou".includes(word[1])) {
+        console.log(word.slice(1) + word[0] + "ay");
             } else {
-        console.log(phrase.slice(2) + phrase.slice(0, 2) + "ay");
+        console.log(word.slice(2) + word.slice(0, 2) + "ay");
     }
-}
+}}
